@@ -1,6 +1,8 @@
 # grading-system-ajax
 Grading System with Ajax jQuery PHP Native/Vanilla
 
+still early, incomplete, still not yet seen the grading system
+
 just ignore about controllers, models and view folders, nothing special there, just use require or require_once
 
 # for install
@@ -24,7 +26,7 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id`);
 ALTER TABLE `pengguna`
   MODIFY `id` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-  
+
 
 CREATE TABLE `siswa` (
   `nis` int(11) NOT NULL,
