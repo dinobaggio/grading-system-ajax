@@ -773,3 +773,9 @@ function cekDataInsert($data) {
         
     });
 </script>
+
+<script>
+    if (document.getElementById("ajaxIndex") == null) {
+        window.open("../index.php","_self")
+    }
+</script>

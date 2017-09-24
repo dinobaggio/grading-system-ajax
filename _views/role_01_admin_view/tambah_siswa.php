@@ -1,11 +1,11 @@
 <?php 
 
-require_once('../../_controllers/role_01_admin_controller/Home_admin.php');
+require_once('../../_controllers/role_01_admin_controller/tambah_siswa.php');
 
 ?>
 <div id="adminTambahSiswa" class="w3-section"> 
     <h2>Tambah Siswa</h2>
-    <p>tambah siswa masih tahap pengembangan</p>
+    <p>tambah siswa sudah done, tinggal merapikan, menambahkan detail setelah berhasil menambah siswa</p>
     <p class="w3-text-red">* harus diisi</p>
     <form method="POST" action="javascript:void(0)" name="formTambahSiswa">
         <table> 

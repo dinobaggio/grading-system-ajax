@@ -42,3 +42,8 @@ if(isset($_SESSION["username"]) && isset($_SESSION["role"])) {
     </script>
 <?php } ?>
 
+<script>
+    if (document.getElementById("ajaxIndex") == null) {
+        window.open("../index.php","_self")
+    }
+</script>

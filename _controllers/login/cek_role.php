@@ -47,3 +47,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $kon = null;
 }
+?>
+
+<script>
+    if (document.getElementById("ajaxIndex") == null) {
+        window.open("../index.php","_self")
+    }
+</script>
