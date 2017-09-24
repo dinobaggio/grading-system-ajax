@@ -1,5 +1,6 @@
 # grading-system-ajax
 Grading System with Ajax jQuery PHP Native/Vanilla
+
 just ignore about controllers, models and view folders, nothing special there, just use require or require_once
 
 # for install
