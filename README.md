@@ -1,2 +1,2 @@
 # grading-system-ajax
-Grading System with Ajax jQuery Native/Vanilla
+Grading System with Ajax jQuery PHP Native/Vanilla
