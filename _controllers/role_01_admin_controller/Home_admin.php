@@ -373,6 +373,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $hp.br;
         echo $alamat.br;
 
+        /* MODEL model DISINI */
+        require_once('../');
         
         $nis = "";
         $full_nama = "";
