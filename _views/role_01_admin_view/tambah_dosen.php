@@ -1,25 +1,32 @@
+<?php 
+
+require_once('../../_controllers/role_01_admin_controller/Tambah_dosen.php');
+
+
+?>
+
 <div id="adminTambahDosen" class="w3-section"> 
     <h2>Tambah Dosen</h2>
     <p>tambah dosen masih dalam tahap pengembangan</p>
     <p class="w3-text-red">* harus diisi</p>
     <form method="POST" action="javascript:void(0)" name="formTambahDosen">
         <table> 
-        <tr><td>NID: </td><td><input type="text" name="nid" placeholder="Nomor Induk Dosen" value="" /> <span class="w3-text-red">*</span></td></tr>
-        <tr><td>Nama: </td><td><input type="text" name="full_nama" placeholder="Full Nama" value="" /> <span class="w3-text-red">*</span></td></tr>
+        <tr><td>NID: </td><td><input type="text" name="nid" placeholder="Nomor Induk Dosen" value="<?php echo $nid;?>" /> <span class="w3-text-red">*<?php echo $errNid;?></span></td></tr>
+        <tr><td>Nama: </td><td><input type="text" name="full_nama" placeholder="Full Nama" value="<?php echo $full_nama;?>" /> <span class="w3-text-red">*<?php echo $errFull_nama;?></span></td></tr>
         <tr><td>Jenis Kelamin: </td> 
         <td><select name="jenis_kl">
-            <option value="">Pilih Jenis Kelamin</option>
-            <option value="Laki-laki" >Laki-laki</option>
-            <option value="Perempuan" >Perempuan</option>
-        </select> <span class="w3-text-red">*</span></td></tr>
+            <option value="" <?php echo $defaultKl;?> >Pilih Jenis Kelamin</option>
+            <option value="Laki-laki" <?php echo $laki;?> >Laki-laki</option>
+            <option value="Perempuan" <?php echo $perempuan;?> >Perempuan</option>
+        </select> <span class="w3-text-red">*<?php echo $errJenis_kl;?></span></td></tr>
         <tr><td>Agama: </td>
         <td><select name="agama">
-            <option value="">Pilih Agama</option>
-            <option value="Islam">Islam</option>
-            <option value="Kristen">Kristen</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Budha">Budha</option>
-        </select> <span class="w3-text-red">*</span></td></tr>
+            <option value="" <?php echo $defaultAgama;?> >Pilih Agama</option>
+            <option value="Islam"  <?php echo $Islam;?> >Islam</option>
+            <option value="Kristen"  <?php echo $kristen;?> >Kristen</option>
+            <option value="Hindu"  <?php echo $hindu;?> >Hindu</option>
+            <option value="Budha" <?php echo $budha;?> >Budha</option>
+        </select> <span class="w3-text-red">*<?php echo $errAgama;?></span></td></tr>
         <tr><td>Tanggal Lahir: </td><td>
             <input type="text" name="hari_lahir" maxlength="2" size="2" value="" placeholder="Hari"/> / 
             <input type="text" name="bulan_lahir" maxlength="2" size="3" value="" placeholder="Bulan" /> / 
