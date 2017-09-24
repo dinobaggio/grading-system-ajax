@@ -3,7 +3,7 @@ Grading System with Ajax jQuery PHP Native/Vanilla
 
 still early, incomplete, still not yet seen the grading system
 
-just ignore about controllers, models and view folders, nothing special there, just use require or require_once
+just ignore about controllers, models and views folders, nothing special there, just use require or require_once
 
 # for install
 create database 'grading_system_belajar'

@@ -7,7 +7,8 @@
     <script src="_asset/js/jquery-3.2.1.js">//jQuery ver 3.2.1</script>
     <script src="_asset/js/index.js">//IndexJS </script>
     <body class="w3-container">
-        <h1>Selamat Datang di Grading System by Dino</h1>
+        <h1>Selamat Datang di Grading System by dinobaggio</h1>
+        <button id="dinobaggio" class="w3-button">dinobaggio.github.io</button>
         <div id="ajaxIndex">
         </div>
         

@@ -461,24 +461,6 @@ function cekDataInsert($data) {
             var telepon = $("[name=telepon]").val();
             var hp = $("[name=hp]").val();
             var alamat = $("[name=alamat]").val();
-            /* $.post("role_01_admin/tambah_siswa.php", {
-                nis : nis,
-                full_nama : full_nama,
-                jenis_kl : jenis_kl,
-                agama : agama,
-                tahun_masuk : tahun_masuk,
-                tanggal_masuk : tanggal_masuk, 
-                tanggal_lahir : tanggal_lahir,
-                tempat_lahir : tempat_lahir,
-                provinsi : provinsi,
-                asal_smu : asal_smu,
-                telepon : telepon,
-                hp : hp,
-                alamat : alamat,
-            }, function(data){
-                $("#indexAdmin").html(data);
-            }); */
-
             $.ajax({
                 url: "_views/role_01_admin_view/tambah_siswa.php",
                 data: {

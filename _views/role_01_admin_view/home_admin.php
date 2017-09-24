@@ -54,7 +54,9 @@ if(isset($_SESSION["username"]) && isset($_SESSION["role"])) {
         <button id="logoutBtn">Logout</button>
     </div>
     <div id="indexAdmin">
-        tambah siswa module admin yang sedang dikerjakan 
+        <br/>
+        tambah siswa module admin sudah done + sudah menampilkan detail ketika sukses menambah siswa, <br/>
+        selanjutnya tambah dosen module admin sedang dalam proses pembuatan dan pengembangan 
     </div>
 
 </div>
