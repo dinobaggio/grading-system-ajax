@@ -56,7 +56,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(!preg_match("/^[0-9]*$/", $_POST["nis"])) {
             $errNis = "Hanya angka saja yang di izinkan";
         } else {
-            $nis = cekDataInsert($_POST["nis"]);
+            $file = require_once('../../config/dbset.php');
+            
+            $que = "SELECT nis FROM siswa WHERE nis=:nis";
+            $tugas = $kon->prepare($que);
+            $tugas->bindParam(':nis', $nis);
+            $nis = $_POST['nis'];
+            $tugas->execute();
+            $cekNis = $tugas->rowCount();
+            if ($cekNis == 1) {
+                $errNis = "$nis sudah ada silahkan gunakan yang lain";
+                $nis='';
+            }else {
+                $nis = cekDataInsert($_POST["nis"]);
+            }
+            
+            $file = null;
         }
     }
 
@@ -359,12 +374,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $agama.br;
         echo $tahun_masuk.br;
         if ($tanggal_masuk != "") {
-            $tanggal_masuk = strtotime($tanggal_masuk);
-            echo date("d-M-Y", $tanggal_masuk).br ;
+            //$tanggal_masuk = strtotime($tanggal_masuk);
+            //echo date("d-M-Y", $tanggal_masuk).br ;
+            echo $tanggal_masuk;
         }
         if($tanggal_lahir != ""){
-            $tanggal_lahir = strtotime($tanggal_lahir);
-            echo date("d-M-Y", $tanggal_lahir).br;
+           // $tanggal_lahir = strtotime($tanggal_lahir);
+            //echo date("d-M-Y", $tanggal_lahir).br;
+            echo $tanggal_lahir;
         }
         echo $tempat_lahir.br;
         echo $provinsi.br;
@@ -374,7 +391,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $alamat.br;
 
         /* MODEL model DISINI */
-        require_once('../');
+        require_once('../../_models/role_01_admin_model/tambah_siswa_model.php');
         
         $nis = "";
         $full_nama = "";

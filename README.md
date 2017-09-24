@@ -20,6 +20,11 @@ INSERT INTO `pengguna` (`id`, `username`, `password`, `role`) VALUES
 (2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'siswa'),
 (3, 'dosen', 'ce28eed1511f631af6b2a7bb0a85d636', 'dosen');
 
+ALTER TABLE `pengguna`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `pengguna`
+  MODIFY `id` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  
 
 CREATE TABLE `siswa` (
   `nis` int(11) NOT NULL,
@@ -37,4 +42,8 @@ CREATE TABLE `siswa` (
   `foto` blob,
   `alamat` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`nis`);
+
 ```
