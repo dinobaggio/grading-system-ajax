@@ -30,7 +30,8 @@ try {
     $password = md5($nis);
     $role = 'siswa';
     $tugas->execute();
-    echo "dan data telah dibuat usernya".br; ?>
+    echo "dan data telah dibuat usernya".br;
+    ?>
 
 <script>
     /* $("#indexAdmin").load("_views/role_01_admin_view/detail_siswa.php",{

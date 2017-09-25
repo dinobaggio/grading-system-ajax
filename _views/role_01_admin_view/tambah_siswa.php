@@ -4,6 +4,7 @@ require_once('../../_controllers/role_01_admin_controller/tambah_siswa.php');
 
 ?>
 <div id="adminTambahSiswa" class="w3-section"> 
+<script src="_asset/js/public_js.js"></script>
     <h2>Tambah Siswa</h2>
     <p>tambah siswa sudah done, sudah menampilkan detail siswa, tinggal merapikan style</p>
     <p class="w3-text-red">* harus diisi</p>

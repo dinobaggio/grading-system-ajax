@@ -242,8 +242,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         $tempat_lahir = ucwords($_POST["tempat_lahir"]);
                         $tempat_lahir = trim($tempat_lahir);
                     }
-            }
-        } else {
+                }
+            } else {
             $errTempat_lahir = "";
         }
     }
@@ -317,7 +317,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
         } else {
-            $hp = "";
+            $errHp = "";
         }
     }
     if(isset($_POST["alamat"])) {
@@ -427,7 +427,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     } 
 }
 
-
 function cekDataInsert($data) {
     $data = trim($data);
     $data = addslashes($data);
@@ -435,9 +434,8 @@ function cekDataInsert($data) {
     return $data;
 }
 
-
 ?>
-<script src="_asset/js/public_js.js">//made home</script>
+ 
 <script> // made home
     $(document).ready(function(){
         $("[name=formTambahSiswa]").submit(function(){

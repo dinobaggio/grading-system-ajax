@@ -61,11 +61,12 @@ if(isset($_SESSION["username"]) && isset($_SESSION["role"])) {
 
 </div>
     <?php } else {
-        echo "anda bukan admin"; ?> <script> window.open("../index.php", "_self"); </script> <?php
-    }
+              echo "anda bukan admin"; ?> <script> window.open("../index.php", "_self"); </script> <?php
+          }
+
 } else {
-    echo "anda harus login"; ?> <script> window.open("../index.php", "_self"); </script> <?php
-}
+           echo "anda harus login"; ?> <script> window.open("../index.php", "_self"); </script> <?php
+       }
 ?>
 
 <script>

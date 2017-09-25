@@ -5,7 +5,8 @@ require_once('../../_controllers/role_01_admin_controller/Tambah_dosen.php');
 
 ?>
 
-<div id="adminTambahDosen" class="w3-section"> 
+<div id="adminTambahDosen" class="w3-section">
+<script src="_asset/js/public_js.js"></script>
     <h2>Tambah Dosen</h2>
     <p>tambah dosen masih dalam tahap pengembangan</p>
     <p class="w3-text-red">* harus diisi</p>
@@ -28,23 +29,23 @@ require_once('../../_controllers/role_01_admin_controller/Tambah_dosen.php');
             <option value="Budha" <?php echo $budha;?> >Budha</option>
         </select> <span class="w3-text-red">*<?php echo $errAgama;?></span></td></tr>
         <tr><td>Tanggal Lahir: </td><td>
-            <input type="text" name="hari_lahir" maxlength="2" size="2" value="" placeholder="Hari"/> / 
-            <input type="text" name="bulan_lahir" maxlength="2" size="3" value="" placeholder="Bulan" /> / 
-            <input type="text" name="tahun_lahir" maxlength="4" size="4" value="" placeholder="Tahun"/> 
-            <span class="w3-text-red"></span>
+            <input type="text" name="hari_lahir" maxlength="2" size="2" value="<?php echo $hari_lahir;?>" placeholder="Hari"/> / 
+            <input type="text" name="bulan_lahir" maxlength="2" size="3" value="<?php echo $bulan_lahir;?>" placeholder="Bulan" /> / 
+            <input type="text" name="tahun_lahir" maxlength="4" size="4" value="<?php echo $tahun_lahir;?>" placeholder="Tahun"/> 
+            <span class="w3-text-red"><?php echo $errTanggal_lahir;?></span>
         </td></tr>
         <tr><td></td><td class="w3-opacity">contoh: 27 / 11 / 1995</td></tr>
-        <tr><td>Tempat Lahir: </td><td><input type="text" name="tempat_lahir" value="" placeholder="Tempat Lahir" /> 
-            <span class="w3-text-red"></span></td></tr>
-        <tr><td>Provinsi: </td><td><input type="text" name="provinsi" value="" placeholder="Provinsi" />
-            <span class="w3-text-red"></span></td></tr>
-        <tr><td>Telepon Rumah: </td><td><input type="text" name="telepon" value="" placeholder="Telepon Rumah" />
-            <span class="w3-text-red"></span></td></tr>
-        <tr><td>Nomor HP: </td><td><input type="text" name="hp" value="" placeholder="Nomor HP" >
-            <span class="w3-text-red"></span></td></tr>
+        <tr><td>Tempat Lahir: </td><td><input type="text" name="tempat_lahir" value="<?php echo $tempat_lahir;?>" placeholder="Tempat Lahir" /> 
+            <span class="w3-text-red"><?php echo $errTempat_lahir;?></span></td></tr>
+        <tr><td>Provinsi: </td><td><input type="text" name="provinsi" value="<?php echo $provinsi;?>" placeholder="Provinsi" />
+            <span class="w3-text-red"><?php echo $errProvinsi;?></span></td></tr>
+        <tr><td>Telepon Rumah: </td><td><input type="text" name="telepon" value="<?php echo $telepon;?>" placeholder="Telepon Rumah" />
+            <span class="w3-text-red"><?php echo $errTelepon;?></span></td></tr>
+        <tr><td>Nomor HP: </td><td><input type="text" name="hp" value="<?php echo $hp;?>" placeholder="Nomor HP" >
+            <span class="w3-text-red"><?php echo $errHp;?></span></td></tr>
         <tr><td>Foto: </td><td><input type="file" name="foto" class="w3-opacity" accept="image/*" /></td></tr>
         <tr><td>Alamat: </td>
-        <td><textarea name="alamat"></textarea></td><span class="w3-text-red"></span></tr>
+        <td><textarea name="alamat"><?php echo $alamat;?></textarea></td><span class="w3-text-red"><?php echo $errAlamat;?></span></tr>
         </table>
         <input type="submit" value="Simpan" />
     </form>
