@@ -56,8 +56,9 @@ if(isset($_SESSION["username"]) && isset($_SESSION["role"])) {
     <div id="indexAdmin">
         <br/>
         upload foto siswa dan dosen masih blm bisa, di skip saja dulu<br/>
-        tambah siswa module admin sudah done + sudah menampilkan detail ketika sukses menambah siswa, <br/>
-        selanjutnya tambah dosen module admin sedang dalam proses pembuatan dan pengembangan 
+        + tambah siswa module admin sudah done + sudah menampilkan detail ketika sukses menambah siswa, <br/>
+        + selanjutnya tambah dosen module admin sudah done dan sudah menampilkan detail ketika sukses memasukan data.<br/>
+        - selanjutnya tambah matkul dalam proses pengembangan dan pembuatan. 
     </div>
 
 </div>

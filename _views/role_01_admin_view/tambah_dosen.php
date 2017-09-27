@@ -8,7 +8,7 @@ require_once('../../_controllers/role_01_admin_controller/Tambah_dosen.php');
 <div id="adminTambahDosen" class="w3-section">
 <script src="_asset/js/public_js.js"></script>
     <h2>Tambah Dosen</h2>
-    <p>tambah dosen sudah konek ke database, dan sudah langsung membuat usernya, tinggal menampilkan detail dosen ketika berhasil memasukan data kedalam database; </p>
+    <p>tambah dosen sudah done, sudah menampilkan detail ketika berhasil menginput data, selanjutnya merapikan style </p>
     <p class="w3-text-red">* harus diisi</p>
     <form method="POST" action="javascript:void(0)" name="formTambahDosen">
         <table> 
@@ -45,7 +45,7 @@ require_once('../../_controllers/role_01_admin_controller/Tambah_dosen.php');
             <span class="w3-text-red"><?php echo $errHp;?></span></td></tr>
         <tr><td>Foto: </td><td><input type="file" name="foto" class="w3-opacity" accept="image/*" /></td></tr>
         <tr><td>Alamat: </td>
-        <td><textarea maxlength="50000" name="alamat"><?php echo $alamat;?></textarea></td><span class="w3-text-red"><?php echo $errAlamat;?></span></tr>
+        <td><textarea maxlength="50000" name="alamat" placeholder="Alamat ...."><?php echo $alamat;?></textarea></td><span class="w3-text-red"><?php echo $errAlamat;?></span></tr>
         </table>
         <input type="submit" value="Simpan" />
     </form>

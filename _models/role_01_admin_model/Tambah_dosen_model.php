@@ -30,7 +30,17 @@ try {
     $password = md5($nid);
     $role = 'dosen';
     $tugas->execute();
-    echo "dan data telah dibuat usernya".br;
+    echo "dan data telah dibuat usernya".br; ?>
+<script>
+    $.ajax({
+        url : '_views/role_01_admin_view/detail_dosen.php',
+        method: "POST",
+        data : { nid: "<?php echo $nid;?>"}
+    }).done(function(data){
+        $("#indexAdmin").html(data);
+    });
+</script>
+<?php
 } catch (PDOException $e) {
     echo "error: ".$e->getMessage();
 }

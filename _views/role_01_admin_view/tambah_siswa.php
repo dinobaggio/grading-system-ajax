@@ -53,7 +53,7 @@ require_once('../../_controllers/role_01_admin_controller/tambah_siswa.php');
             <span class="w3-text-red"><?php echo $errHp; ?></span></td></tr>
         <tr><td>Foto: </td><td><input type="file" name="foto" class="w3-opacity" accept="image/*" /></td></tr>
         <tr><td>Alamat: </td>
-        <td><textarea maxlength="50000" name="alamat"><?php echo $alamat; ?></textarea></td><span class="w3-text-red"><?php echo $errAlamat; ?></span></tr>
+        <td><textarea maxlength="50000" name="alamat" placeholder="Alamat ...."><?php echo $alamat; ?></textarea></td><span class="w3-text-red"><?php echo $errAlamat; ?></span></tr>
         </table>
         <input type="submit" value="Simpan" />
     </form>
