@@ -10,8 +10,8 @@ require_once('../../_controllers/role_01_admin_controller/tambah_siswa.php');
     <p class="w3-text-red">* harus diisi</p>
     <form method="POST" action="javascript:void(0)" name="formTambahSiswa">
         <table> 
-        <tr><td>NIS: </td><td><input type="text" name="nis" placeholder="Nomor Induk Siswa" value="<?php echo $nis; ?>" /> <span class="w3-text-red">*<?php echo $errNis; ?></span></td></tr>
-        <tr><td>Nama: </td><td><input type="text" name="full_nama" placeholder="Full Nama" value="<?php echo $full_nama; ?>" /> <span class="w3-text-red">*<?php echo $errFull_nama; ?></span></td></tr>
+        <tr><td>NIS: </td><td><input type="text" name="nis" placeholder="Nomor Induk Siswa" maxlength="11" value="<?php echo $nis; ?>" /> <span class="w3-text-red">*<?php echo $errNis; ?></span></td></tr>
+        <tr><td>Nama: </td><td><input type="text" name="full_nama" placeholder="Full Nama" maxlength="50" value="<?php echo $full_nama; ?>" /> <span class="w3-text-red">*<?php echo $errFull_nama; ?></span></td></tr>
         <tr><td>Jenis Kelamin: </td> 
         <td><select name="jenis_kl">
             <option value="" <?php echo $defaultKl; ?>>Pilih Jenis Kelamin</option>
@@ -41,19 +41,19 @@ require_once('../../_controllers/role_01_admin_controller/tambah_siswa.php');
             <span class="w3-text-red"><?php echo $errTanggal_lahir; ?></span>
         </td></tr>
         <tr><td></td><td class="w3-opacity">contoh: 27 / 11 / 1995</td></tr>
-        <tr><td>Tempat Lahir: </td><td><input type="text" name="tempat_lahir" value="<?php echo $tempat_lahir; ?>" placeholder="Tempat Lahir" /> 
+        <tr><td>Tempat Lahir: </td><td><input type="text" name="tempat_lahir" maxlength="50" value="<?php echo $tempat_lahir; ?>" placeholder="Tempat Lahir" /> 
             <span class="w3-text-red"><?php echo $errTempat_lahir; ?></span></td></tr>
-        <tr><td>Provinsi: </td><td><input type="text" name="provinsi" value="<?php echo $provinsi; ?>" placeholder="Provinsi" />
+        <tr><td>Provinsi: </td><td><input type="text" name="provinsi" maxlength="50" value="<?php echo $provinsi; ?>" placeholder="Provinsi" />
             <span class="w3-text-red"><?php echo $errProvinsi; ?></span></td></tr>
-        <tr><td>Asal SMU: </td><td><input type="text" name="asal_smu" value="<?php echo $asal_smu; ?>" placeholder="Asal SMU" />
+        <tr><td>Asal SMU: </td><td><input type="text" name="asal_smu" maxlength="100" value="<?php echo $asal_smu; ?>" placeholder="Asal SMU" />
             <span class="w3-text-red"><?php echo $errAsal_smu; ?></span></td></tr>
-        <tr><td>Telepon Rumah: </td><td><input type="text" name="telepon" value="<?php echo $telepon; ?>" placeholder="Telepon Rumah" />
+        <tr><td>Telepon Rumah: </td><td><input type="text" name="telepon" maxlength="50" value="<?php echo $telepon; ?>" placeholder="Telepon Rumah" />
             <span class="w3-text-red"><?php echo $errTelepon; ?></span></td></tr>
-        <tr><td>Nomor HP: </td><td><input type="text" name="hp" value="<?php echo $hp; ?>" placeholder="Nomor HP" >
+        <tr><td>Nomor HP: </td><td><input type="text" name="hp" maxlength="50" value="<?php echo $hp; ?>" placeholder="Nomor HP" >
             <span class="w3-text-red"><?php echo $errHp; ?></span></td></tr>
         <tr><td>Foto: </td><td><input type="file" name="foto" class="w3-opacity" accept="image/*" /></td></tr>
         <tr><td>Alamat: </td>
-        <td><textarea name="alamat"><?php echo $alamat; ?></textarea></td><span class="w3-text-red"><?php echo $errAlamat; ?></span></tr>
+        <td><textarea maxlength="50000" name="alamat"><?php echo $alamat; ?></textarea></td><span class="w3-text-red"><?php echo $errAlamat; ?></span></tr>
         </table>
         <input type="submit" value="Simpan" />
     </form>

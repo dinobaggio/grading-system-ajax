@@ -44,6 +44,9 @@ define('br', '<br/>', true);
 } // akhir set default nilai input dan variable error
 
 
+
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = array();
     parse_str($_POST['data'], $data);
@@ -66,7 +69,32 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(!preg_match("/^[0-9]*$/", $data["nid"])) {
                 $errNid = "Hanya angka saja yang di izinkan";
             } else {
+                //$nid = cekDataInsert($data["nid"]);
+                $file = require_once('../../config/dbset.php');
+                $que = "SELECT nid FROM dosen WHERE nid=:nid";
+                $tugas = $kon->prepare($que);
+                $tugas->bindParam(':nid', $nid);
                 $nid = cekDataInsert($data["nid"]);
+                $tugas->execute();
+                $cekNid = $tugas->rowCount();
+                if ($cekNid == 1) {
+                    $errNid = "$nid sudah ada silahkan gunakan yang lain";
+                    $nid='';
+                }else {
+                    $que = "SELECT nis FROM siswa WHERE nis=:nid";
+                    $tugas = $kon->prepare($que);
+                    $tugas->bindParam(':nid', $nid);
+                    $nid = cekDataInsert($data["nid"]);
+                    $tugas->execute();
+                    $cekNid = $tugas->rowCount();
+                    if($cekNid == 1) {
+                        $errNid = "$nid suda ada silahkan gunakan yang lain";
+                    } else {
+                        $nid = cekDataInsert($data["nid"]);
+                    }
+                }
+                
+                unset($file);
             }
         }
 
@@ -211,7 +239,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errProvinsi = "";
         }
 
-        if(!empty($data['telepon'])){
+        if(!empty($data['telepon'])){ // cek telpon
             $telepon = $data['telepon'];
             if(strlen($data['telepon']) < 3 ) {
                 $errTelepon = "*Inputan tidak boleh kurang dari 3 character, jika tidak harap kosongkan";
@@ -227,7 +255,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errTelepon = "";
         }
 
-        if(!empty($data['hp'])){
+        if(!empty($data['hp'])){ //cek HP
             $hp = $data['hp'];
             if(strlen($data['hp']) < 3 ) {
                 $errHp = "*Inputan tidak boleh kurang dari 3 character, jika tidak harap kosongkan";
@@ -244,7 +272,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         
-        if(!empty($data['alamat'])) {
+        if(!empty($data['alamat'])) { // cek alamat
             $alamat = $data['alamat'];
         } else {
             $errAlamat = '';
@@ -261,31 +289,45 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errTempat_lahir == '' &&
         $errTelepon == '' &&
         $errHp == '' &&
-        $errAlamat == '') {
-
+        $errAlamat == '' &&
+        $errProvinsi == '') {
+        
+        $nid = cekDataInsert($nid);
+        $full_nama = cekDataInsert($full_nama);
+        $jenis_kl = cekDataInsert($jenis_kl);
+        $agama = cekDataInsert($agama);
+        $tanggal_lahir = cekDataInsert($tanggal_lahir);
+        $tempat_lahir = cekDataInsert($tempat_lahir);
+        $provinsi = cekDataInsert($provinsi);
+        $telepon = cekDataInsert($telepon);
+        $hp = cekDataInsert($hp);
+        $alamat = cekDataInsert($alamat);
+        
         echo "data yang akan dimasukan kedalam database:".br;
-        echo cekDataInsert($nid).br;
-        echo cekDataInsert($full_nama).br;
+        echo $nid.br;
+        echo $full_nama.br;
         echo $jenis_kl.br;
         echo $agama.br;
         if(!empty($tanggal_lahir)) {
-            echo cekDataInsert($tanggal_lahir).br;
+            echo $tanggal_lahir.br;
         }
         if(!empty($tempat_lahir)) {
-            echo cekDataInsert($tempat_lahir).br;
+            echo $tempat_lahir.br;
         }
         if(!empty($provinsi)){
-            echo cekDataInsert($provinsi).br;
+            echo $provinsi.br;
         }
         if(!empty($telepon)){
-            echo cekDataInsert($telepon).br;
+            echo $telepon.br;
         }
         if(!empty($hp)){
-            echo cekDataInsert($hp).br;
+            echo $hp.br;
         }
         if(!empty($alamat)){
-            echo cekDataInsert($alamat).br;
+            echo $alamat.br;
         }
+        $loadModel = require_once('../../_models/role_01_admin_model/tambah_dosen_model.php');
+        unset($loadModel);
 
         { // reset nilai input
             $nid='';

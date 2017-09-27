@@ -61,14 +61,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $que = "SELECT nis FROM siswa WHERE nis=:nis";
             $tugas = $kon->prepare($que);
             $tugas->bindParam(':nis', $nis);
-            $nis = $_POST['nis'];
+            $nis = cekDataInsert($_POST["nis"]);
             $tugas->execute();
             $cekNis = $tugas->rowCount();
             if ($cekNis == 1) {
                 $errNis = "$nis sudah ada silahkan gunakan yang lain";
                 $nis='';
             }else {
+                $que = "SELECT nid FROM dosen WHERE nid=:nis";
+                $tugas = $kon->prepare($que);
+                $tugas->bindParam(':nis', $nis);
                 $nis = cekDataInsert($_POST["nis"]);
+                $tugas->execute();
+                $cekNis = $tugas->rowCount();
+                if($cekNis == 1) {
+                    $errNis = "$nis suda ada silahkan gunakan yang lain";
+                    $nis = '';
+                } else {
+                    $nis = cekDataInsert($_POST["nis"]);
+                }
             }
             
             $file = null;

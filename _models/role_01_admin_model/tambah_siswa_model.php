@@ -34,17 +34,13 @@ try {
     ?>
 
 <script>
-    /* $("#indexAdmin").load("_views/role_01_admin_view/detail_siswa.php",{
-        nis : "<?php //echo $nis; ?>"
-    }) */;
-    
-        $.ajax({
-            url : '_views/role_01_admin_view/detail_siswa.php',
-            method: "POST",
-            data : { nis: "<?php echo $nis;?>"}
-        }).done(function(data){
-            $("#indexAdmin").html(data);
-        });
+    $.ajax({
+        url : '_views/role_01_admin_view/detail_siswa.php',
+        method: "POST",
+        data : { nis: "<?php echo $nis;?>"}
+    }).done(function(data){
+        $("#indexAdmin").html(data);
+    });
     
 </script>
 
@@ -64,6 +60,6 @@ $file = null;
 
 <script>
     if (document.getElementById("ajaxIndex") == null) {
-        window.open("../index.php","_self")
+        window.open("../../index.php","_self")
     }
 </script>
